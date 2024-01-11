@@ -23,7 +23,7 @@ def CLOOK(queue, head, direction):
     for i in range(request_size):
         if queue[i] < head:
             left.append(queue[i])
-        if queue[i] > head:
+        if queue[i] >= head:
             right.append(queue[i])
 
     # Sorting left and right requests
@@ -95,7 +95,7 @@ def CLOOK(queue, head, direction):
     print("Seek Sequence is", ", ".join(str(track) for track in seek_sequence))
 
     # Display the maximum head movement
-    print("Average-case Seek Time = ", (movement_count/len(seek_sequence)).__round__(2))
+    print("Average Seek Time = ", (movement_count/len(seek_sequence)).__round__(2))
 
     # Display the maximum head movement
     print("Worst-case Seek Time = ", max)
@@ -104,7 +104,7 @@ def CLOOK(queue, head, direction):
 print("Initial position of head: ", head)
 
 # input number of requests
-request_size = int(input("Enter number of requests: "))
+# request_size = int(input("Enter number of requests: "))
 
 # input direction
 direction = input("Enter direction (left/right): ")

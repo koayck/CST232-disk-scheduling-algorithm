@@ -21,7 +21,7 @@ def CSCAN(queue, head, direction):
     for i in range(request_size):
         if queue[i] < head:
             left.append(queue[i])
-        if queue[i] > head:
+        if queue[i] >= head:
             right.append(queue[i])
 
     # Appending end values which has to be visited before reversing the direction
@@ -97,11 +97,10 @@ def CSCAN(queue, head, direction):
     print("Seek Sequence is", ", ".join(str(track) for track in seek_sequence))
 
     # Display the maximum head movement
-    print("Average-case Seek Time = ", (movement_count/len(seek_sequence)).__round__(2))
+    print("Average Seek Time = ", (movement_count/len(seek_sequence)).__round__(2))
 
     # Display the maximum head movement
     print("Worst-case Seek Time = ", max)
-
 
 # Display initial position of head
 print("Initial position of head: ", head)
